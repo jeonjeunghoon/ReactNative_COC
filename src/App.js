@@ -1,80 +1,23 @@
 import * as React from 'react';
 // import {useEffect} from 'react';
-import { Button, View, Text, Image,TouchableOpacity, Alert, StyleSheet } from 'react-native';
+import {Text, Image,TouchableOpacity, Alert, StyleSheet } from 'react-native';
 
 //Navigator Container 사용을 위해서 만듬 아곤 Navigator를 담는 공간임
 import { NavigationContainer } from '@react-navigation/native';
-
 //Stack Navigator 사용을 위해서 import
 import { createStackNavigator } from '@react-navigation/stack';
+//바텀 탭 만든거 import 함
+import BottomTab from './screen/bottom_tab/bottom_tab';
 
-//바텀 탭 만들기 위해서 import 함
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-
-///screen/cafe_info/cafeInfo 경로에 있는 cafeInfo를 가져옴
+//
 import CafeInfo from './screen/cafe_info/cafeInfo'
-
-// screen/mypage/like에 있는 like를 가져옴
-import Jim from './screen/mypage/like'
-
-// screen/mypage/mypage_main경로에 있는 mypage_main를 가져옴
-import MyPage from './screen/mypage/mypage_main'
+//카페 검색창 부분
+import SearchCafe from './screen/search/search_cafe'
 
 // import SplashScreen from 'react-native-splash-screen';
 
-const Tab = createBottomTabNavigator();
-
-function BottomTab(){
-	return(
-		<Tab.Navigator>
-			<Tab.Screen name="Home" component={Home}
-				options={{
-					tabBarLabel: ({ focused }) => (
-						<Text style={{ fontSize: 20, color: focused ? '#0B614B' : '#000000' , marginBottom:10 }}>
-						  Home
-						</Text>
-					  )
-				}}
-			/>
-			<Tab.Screen name="찜" component={Jim}
-				options={{
-					tabBarLabel: ({ focused }) => (
-						<Text style={{ fontSize: 20, color: focused ? '#0B614B' : '#000000' , marginBottom:10 }}>
-						  찜
-						</Text>
-					  )
-				}}
-			/>
-			<Tab.Screen name="마이페이지" component={MyPage}
-				options={{
-					tabBarLabel: ({ focused }) => (
-						<Text style={{ fontSize: 20, color: focused ? '#0B614B' : '#000000' , marginBottom:10 }}>
-						  마이페이지
-						</Text>
-					  )
-				}}/>
-	  	</Tab.Navigator>
-	);
-}
-//메인화면 부분
-function Home({navigation}){
-	return(
-		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-			{/*이거는 Stack.screen에서 등록한 name인 CafeInfo로 navigate함 */}
-			<Button
-				title="욱재 화면"
-				onPress={() => navigation.navigate('CafeInfo')}
-			/>
-			<Button
-				title="카페 검색"
-				onPress={() => navigation.navigate('CafeInfo')}
-			/>
-	  	</View>
-	);
-}
-
-//Stack Navigatoer를 사용하기 위해서  createStackNavigator해서 만듬
+//Stack Navigator를 사용하기 위해서  createStackNavigator해서 만듬
 const Stack = createStackNavigator();
 
 function App() {
@@ -84,14 +27,10 @@ function App() {
 
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName="Home" screenOptions={{headerTitleAlign: 'center'}}>
+			<Stack.Navigator initialRouteName="Home" screenOptions={{title :'COC', headerTitleAlign: 'center'}}>
 
-				{/* 위에서 만든 BottomTab 사용 */}
-				<Stack.Screen name="BottomTab" component={BottomTab}
-					options={{
-						title : 'COC'
-					}}
-				/>
+				{/* Bottom 탭 함수 호출해서 탭화면 가져옴 그리고 이게 제일 위로 올라와야지 바텀탭 사용가능*/}
+				<Stack.Screen name="BottomTab" component={BottomTab}/>
 				{/* 위에서 import한 CafeInfo를 사용함 */}
 				<Stack.Screen name="CafeInfo" component={CafeInfo}
 					options={{
@@ -99,10 +38,16 @@ function App() {
 						headerRight : shareIcon
 					}}
 				/>
+				<Stack.Screen name="SearchCafe" component={SearchCafe}
+					options={{
+						title : ''
+					}}
+				/>				
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
 }
+
 //아이콘을 나타내는 함수
 function shareIcon() {
 	//아래의 이미지를 반환한다.
