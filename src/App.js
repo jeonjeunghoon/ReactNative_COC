@@ -1,4 +1,5 @@
 import * as React from 'react';
+// import {useEffect} from 'react';
 import { Button, View, Text, Image,TouchableOpacity, Alert, StyleSheet } from 'react-native';
 
 //Navigator Container 사용을 위해서 만듬 아곤 Navigator를 담는 공간임
@@ -19,6 +20,8 @@ import Jim from './screen/mypage/like'
 
 // screen/mypage/mypage_main경로에 있는 mypage_main를 가져옴
 import MyPage from './screen/mypage/mypage_main'
+
+// import SplashScreen from 'react-native-splash-screen';
 
 const Tab = createBottomTabNavigator();
 
@@ -75,6 +78,10 @@ function Home({navigation}){
 const Stack = createStackNavigator();
 
 function App() {
+	// useEffect(() => {
+	// 	SplashScreen.hide();
+	//   }, []);
+
 	return (
 		<NavigationContainer>
 			<Stack.Navigator initialRouteName="Home" screenOptions={{headerTitleAlign: 'center'}}>
