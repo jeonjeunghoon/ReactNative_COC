@@ -19,17 +19,17 @@ function BottomTab(){
 		<Tab.Navigator>
 			<Tab.Screen name="Home" component={Home}
 				options={{
-					title : 'Home'
+					tabBarLabel: 'Home'
 				}}
 			/>
 			<Tab.Screen name="찜" component={Jim}
 				options={{
-					title : '찜'
+					tabBarLabel: '찜'
 				}}
 			/>
 			<Tab.Screen name="마이페이지" component={MyPage}
 				options={{
-					title : '마이페이지'
+					tabBarLabel: '마이페이지'
 				}}/>
 	  	</Tab.Navigator>
 	);
