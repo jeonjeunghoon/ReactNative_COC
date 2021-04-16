@@ -145,7 +145,6 @@
 				3EB1E86FD48DC9978D9EDC16 /* Pods-ReactNative_COC-ReactNative_COCTests.debug.xcconfig */,
 				AFA2484B2700AB508469B460 /* Pods-ReactNative_COC-ReactNative_COCTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
