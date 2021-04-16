@@ -19,17 +19,29 @@ function BottomTab(){
 		<Tab.Navigator>
 			<Tab.Screen name="Home" component={Home}
 				options={{
-					tabBarLabel: 'Home'
+					tabBarLabel: ({ focused }) => (
+						<Text style={{ fontSize: 20, color: focused ? '#0B614B' : '#000000' , marginBottom:10 }}>
+						  Home
+						</Text>
+					  )
 				}}
 			/>
 			<Tab.Screen name="찜" component={Jim}
 				options={{
-					tabBarLabel: '찜'
+					tabBarLabel: ({ focused }) => (
+						<Text style={{ fontSize: 20, color: focused ? '#0B614B' : '#000000' , marginBottom:10 }}>
+						  찜
+						</Text>
+					  )
 				}}
 			/>
 			<Tab.Screen name="마이페이지" component={MyPage}
 				options={{
-					tabBarLabel: '마이페이지'
+					tabBarLabel: ({ focused }) => (
+						<Text style={{ fontSize: 20, color: focused ? '#0B614B' : '#000000' , marginBottom:10 }}>
+						  마이페이지
+						</Text>
+					  )
 				}}/>
 	  	</Tab.Navigator>
 	);
