@@ -7,10 +7,18 @@ import { NavigationContainer } from '@react-navigation/native';
 //Stack Navigator 사용을 위해서 import
 import { createStackNavigator } from '@react-navigation/stack';
 
+//바텀 탭 만들기 위해서 import 함
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
 ///screen/cafe_info/cafeInfo 경로에 있는 cafeInfo를 가져옴
 import CafeInfo from './screen/cafe_info/cafeInfo'
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// screen/mypage/like에 있는 like를 가져옴
+import Jim from './screen/mypage/like'
+
+// screen/mypage/mypage_main경로에 있는 mypage_main를 가져옴
+import MyPage from './screen/mypage/mypage_main'
 
 const Tab = createBottomTabNavigator();
 
@@ -55,28 +63,13 @@ function Home({navigation}){
 				title="욱재 화면"
 				onPress={() => navigation.navigate('CafeInfo')}
 			/>
+			<Button
+				title="카페 검색"
+				onPress={() => navigation.navigate('CafeInfo')}
+			/>
 	  	</View>
 	);
 }
-
-//찜하기 부분
-function Jim(){
-	return(
-		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-			<Text style={styles.tabTitle}>찜하기 화면</Text>
-	  	</View>
-	);
-}
-
-//마이페이지 부분
-function MyPage(){
-	return(
-		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-			<Text style={styles.tabTitle}>마이페이지 화면</Text>
-	  	</View>
-	);
-}
-
 
 //Stack Navigatoer를 사용하기 위해서  createStackNavigator해서 만듬
 const Stack = createStackNavigator();
@@ -85,13 +78,14 @@ function App() {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator initialRouteName="Home" screenOptions={{headerTitleAlign: 'center'}}>
-				{/* 위에서 import한 CafeInfo를 사용함 */}
-				
+
+				{/* 위에서 만든 BottomTab 사용 */}
 				<Stack.Screen name="BottomTab" component={BottomTab}
 					options={{
 						title : 'COC'
 					}}
 				/>
+				{/* 위에서 import한 CafeInfo를 사용함 */}
 				<Stack.Screen name="CafeInfo" component={CafeInfo}
 					options={{
 						title : '카페정보',
