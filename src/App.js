@@ -24,6 +24,7 @@ import SplashScreen from 'react-native-splash-screen';
 const Stack = createStackNavigator();
 
 function App() {
+	//이거는 앱 로딩창 부분
 	useEffect(() => {
 		SplashScreen.hide();
 	  }, [500]);
