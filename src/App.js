@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import * as React from 'react';
 import {Image,TouchableOpacity, Alert, StyleSheet } from 'react-native';
 
 //Navigator Container 사용을 위해서 만듬 아곤 Navigator를 담는 공간임
