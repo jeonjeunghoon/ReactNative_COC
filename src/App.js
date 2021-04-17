@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import {useEffect} from 'react';
 import {Text, Image,TouchableOpacity, Alert, StyleSheet } from 'react-native';
 
 //Navigator Container 사용을 위해서 만듬 아곤 Navigator를 담는 공간임
@@ -15,15 +14,17 @@ import CafeInfo from './screen/cafe_info/cafeInfo'
 //카페 검색창 부분
 import SearchCafe from './screen/search/search_cafe'
 
-// import SplashScreen from 'react-native-splash-screen';
+// SplashScreen -> 어플 로딩
+import {useEffect} from 'react';
+import SplashScreen from 'react-native-splash-screen';
 
 //Stack Navigator를 사용하기 위해서  createStackNavigator해서 만듬
 const Stack = createStackNavigator();
 
 function App() {
-	// useEffect(() => {
-	// 	SplashScreen.hide();
-	//   }, []);
+	useEffect(() => {
+		SplashScreen.hide();
+	  }, [500]);
 
 	return (
 		<NavigationContainer>
