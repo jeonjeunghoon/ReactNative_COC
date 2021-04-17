@@ -13,6 +13,10 @@ function Home({navigation}){
 				title="카페 검색"
 				onPress={() => navigation.navigate('SearchCafe')}
 			/>
+			<Button
+				title="카페 테마로 검색"
+				onPress={() => navigation.navigate('CafeTheme')}
+			/>
 	  	</View>
 	);
 }

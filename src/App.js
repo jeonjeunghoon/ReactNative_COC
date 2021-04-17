@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React,{useState} from 'react';
 // import {useEffect} from 'react';
-import {Text, Image,TouchableOpacity, Alert, StyleSheet } from 'react-native';
+import {Image,TouchableOpacity, Alert, StyleSheet } from 'react-native';
 
 //Navigator Container 사용을 위해서 만듬 아곤 Navigator를 담는 공간임
 import { NavigationContainer } from '@react-navigation/native';
@@ -10,10 +10,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import BottomTab from './screen/bottom_tab/bottom_tab';
 
 
-//
+//핫한 카페 정보글 부분
 import CafeInfo from './screen/cafe_info/cafeInfo'
 //카페 검색창 부분
 import SearchCafe from './screen/search/search_cafe'
+//테마를 통한 카페 검색창 부분
+import CafeTheme from './screen/search/search_cafe_theme'
 
 // import SplashScreen from 'react-native-splash-screen';
 
@@ -42,7 +44,12 @@ function App() {
 					options={{
 						title : ''
 					}}
-				/>				
+				/>
+				<Stack.Screen name='CafeTheme' component={CafeTheme}
+					options={{
+						title : ''
+					}}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
