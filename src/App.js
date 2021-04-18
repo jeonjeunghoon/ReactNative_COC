@@ -16,7 +16,7 @@ import SearchCafe from './screen/search/search_cafe'
 //테마를 통한 카페 검색창 부분
 import CafeTheme from './screen/search/search_cafe_theme'
 
-// SplashScreen -> 어플 로딩
+// SplashScreen -> 어플 로딩이얌
 import {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 
