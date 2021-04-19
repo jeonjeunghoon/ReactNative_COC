@@ -1,27 +1,28 @@
 import * as React from 'react';
-import {Image,TouchableOpacity, Alert, StyleSheet } from 'react-native';
+import { Text } from 'react-native';
 
 //Navigator Container 사용을 위해서 만듬 아곤 Navigator를 담는 공간임
 import { NavigationContainer } from '@react-navigation/native';
-//Stack Navigator 사용을 위해서 import
-import { createStackNavigator } from '@react-navigation/stack';
-//바텀 탭 만든거 import 함
-import BottomTab from './screen/bottom_tab/bottom_tab';
 
-
-//핫한 카페 정보글 부분
-import CafeInfo from './screen/cafe_info/cafeInfo'
-//카페 검색창 부분
-import SearchCafe from './screen/search/search_cafe'
-//테마를 통한 카페 검색창 부분
-import CafeTheme from './screen/search/search_cafe_theme'
 
 // SplashScreen -> 어플 로딩부분이얌
 import {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 
-//Stack Navigator를 사용하기 위해서  createStackNavigator해서 만듬
-const Stack = createStackNavigator();
+//main_page navigation list 업데이트
+import MainPageIndex from './screen/main_page/main_page_index'
+
+
+//바텀 탭 만들기 위해서 import 함
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+// screen/mypage/like에 있는 like를 가져옴
+import Jim from './screen/mypage/like'
+// screen/mypage/mypage_main경로에 있는 mypage_main를 가져옴
+import MyPage from './screen/mypage/mypage_main'
+
+//Tab Navigator 사용하기 위해서 만듬 변수
+const Tab = createBottomTabNavigator();
 
 function App() {
 	//이거는 앱 로딩창 부분
@@ -31,48 +32,37 @@ function App() {
 
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName="Home" screenOptions={{title :'COC', headerTitleAlign: 'center'}}>
+			<Tab.Navigator initialRouteName="Home" screenOptions={{title :'COC', headerTitleAlign: 'center' }}>
 
-				{/* Bottom 탭 함수 호출해서 탭화면 가져옴 그리고 이게 제일 위로 올라와야지 바텀탭 사용가능*/}
-				<Stack.Screen name="BottomTab" component={BottomTab}/>
-				{/* 위에서 import한 CafeInfo를 사용함 */}
-				<Stack.Screen name="CafeInfo" component={CafeInfo}
+				<Tab.Screen name="Home" component={MainPageIndex}
 					options={{
-						title : '카페정보',
-						headerRight : shareIcon
+						tabBarLabel: ({ focused }) => (
+							<Text style={{ fontSize: 20, color: focused ? '#0B614B' : '#000000' , marginBottom:10 }}>
+							Home
+							</Text>
+						)
 					}}
 				/>
-				<Stack.Screen name="SearchCafe" component={SearchCafe}
+				<Tab.Screen name="찜" component={Jim}
 					options={{
-						title : ''
+						tabBarLabel: ({ focused }) => (
+							<Text style={{ fontSize: 20, color: focused ? '#0B614B' : '#000000' , marginBottom:10 }}>
+							찜
+							</Text>
+						)
 					}}
 				/>
-				<Stack.Screen name='CafeTheme' component={CafeTheme}
+				<Tab.Screen name="마이페이지" component={MyPage}
 					options={{
-						title : ''
-					}}
-				/>
-			</Stack.Navigator>
+						tabBarLabel: ({ focused }) => (
+							<Text style={{ fontSize: 20, color: focused ? '#0B614B' : '#000000' , marginBottom:10 }}>
+							마이페이지
+							</Text>
+						)
+					}}/>
+			</Tab.Navigator>
 		</NavigationContainer>
 	);
 }
 
-//아이콘을 나타내는 함수
-function shareIcon() {
-	//아래의 이미지를 반환한다.
-	return (
-		//TouchalbrOpacity를 사용하면 클릭효과인 onpress를 사용할수 있음
-		<TouchableOpacity onPress ={() => Alert.alert('공유버튼 클릭됨')}>
-			<Image
-				style={{ width: 23, height: 23, marginRight: 15 }}
-				source={require('./assets/images/screens/cafeInfo/share.png')}/>
-		</TouchableOpacity>
-	);
-  }
-
-const styles = StyleSheet.create({
-	tabTitle : {
-		fontSize : 20
-	}
-});
 export default App;
