@@ -1,11 +1,15 @@
 import * as React from 'react';
-import {  View, Text, StyleSheet } from 'react-native';
+import {  View, Text, StyleSheet,Button } from 'react-native';
 
 //마이페이지 부분
-function SearchCafe(){
+function SearchCafe({navigation}){
 	return(
 		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 			<Text style={styles.tabTitle}>검색창 화면</Text>
+			<Button
+				title="카페 검색"
+				onPress={() => navigation.navigate('Home',{screen : 'CafeList'})}
+			/>
 	  	</View>
 	);
 }
