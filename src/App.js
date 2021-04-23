@@ -9,9 +9,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 
-//main_page navigation list 업데이트
+//main_page navigation에서 screen list 가져옴
 import MainPageIndex from './screen/main_page/main_page_index'
-
 
 //바텀 탭 만들기 위해서 import 함
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -33,7 +32,7 @@ function App() {
 	return (
 		<NavigationContainer>
 			<Tab.Navigator initialRouteName="Home" screenOptions={{title :'COC', headerTitleAlign: 'center' }}>
-
+				{/* main_page_index에서 등록한 Stack.Screen을 가져옴 */}
 				<Tab.Screen name="Home" component={MainPageIndex}
 					options={{
 						tabBarLabel: ({ focused }) => (
