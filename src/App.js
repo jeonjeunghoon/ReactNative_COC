@@ -20,6 +20,9 @@ import Jim from './screen/mypage/like'
 // screen/mypage/mypage_main경로에 있는 mypage_main를 가져옴
 import MyPage from './screen/mypage/mypage_main'
 
+// screen/mypage/mypage_main경로에 있는 mypage_main를 가져옴
+import ServiceCenter from './screen/service_center/service_center'
+
 //Tab Navigator 사용하기 위해서 만듬 변수
 const Tab = createBottomTabNavigator();
 
@@ -36,7 +39,7 @@ function App() {
 				<Tab.Screen name="Home" component={MainPageIndex}
 					options={{
 						tabBarLabel: ({ focused }) => (
-							<Text style={{ fontSize: 20, color: focused ? '#0B614B' : '#000000' , marginBottom:10 }}>
+							<Text style={{ fontSize: 15, color: focused ? '#0B614B' : '#000000' , marginBottom:15 }}>
 							Home
 							</Text>
 						)
@@ -45,7 +48,7 @@ function App() {
 				<Tab.Screen name="찜" component={Jim}
 					options={{
 						tabBarLabel: ({ focused }) => (
-							<Text style={{ fontSize: 20, color: focused ? '#0B614B' : '#000000' , marginBottom:10 }}>
+							<Text style={{ fontSize: 15, color: focused ? '#0B614B' : '#000000' , marginBottom:15 }}>
 							찜
 							</Text>
 						)
@@ -54,11 +57,21 @@ function App() {
 				<Tab.Screen name="마이페이지" component={MyPage}
 					options={{
 						tabBarLabel: ({ focused }) => (
-							<Text style={{ fontSize: 20, color: focused ? '#0B614B' : '#000000' , marginBottom:10 }}>
+							<Text style={{ fontSize: 15, color: focused ? '#0B614B' : '#000000' , marginBottom:15 }}>
 							마이페이지
 							</Text>
 						)
 					}}/>
+
+				<Tab.Screen name="고객센터" component={ServiceCenter}
+					options={{
+						tabBarLabel: ({ focused }) => (
+							<Text style={{ fontSize: 15, color: focused ? '#0B614B' : '#000000' , marginBottom:15 }}>
+							고객센터
+							</Text>
+						)
+					}}
+				/>
 			</Tab.Navigator>
 		</NavigationContainer>
 	);

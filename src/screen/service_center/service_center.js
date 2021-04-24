@@ -1,21 +1,11 @@
 import * as React from 'react';
 import {  View, Text, StyleSheet, Button } from 'react-native';
-import { useLinkTo } from '@react-navigation/native';
 
 
-function Jim(){
-
-	const linkTo = useLinkTo();
-
-
+function ServiceCenter(){
 	return(
 		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-			<Text style={styles.tabTitle}>찜하기 화면</Text>
-
-			<Button
-				title="찜한 카페 정보"
-				onPress={() => linkTo('/CafeInfo')}
-			/>
+			<Text style={styles.tabTitle}>고객센터 화면</Text>
 	  	</View>
 	);
 }
@@ -26,4 +16,4 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default Jim;
+export default ServiceCenter;

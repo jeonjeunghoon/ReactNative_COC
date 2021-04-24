@@ -23,8 +23,12 @@ import SearchCafe from '../search/search_cafe'
 import CafeTheme from '../search/search_cafe_theme'
 //카페 검색 - 카페 리스트
 import CafeList from '../cafe_list/cafe_list'
-
-
+//카페정보 - 메뉴판
+import CafeMenu from '../cafe_info/cafe_menu'
+//카페정보 - 리뷰 쓰기
+import CafeReviewWrite from '../cafe_info/cafe_review_write'
+//카페정보 - 리뷰 쓰기
+import CafeReviewList from '../cafe_info/cafe_review_list'
 
 //Stack Navigator를 사용하기 위해서  createStackNavigator해서 만듬
 const Stack = createStackNavigator();
@@ -59,7 +63,32 @@ function MainNavigator() {
 				/>
 
 				{/* 카페 검색 - 카페 list */}
-				<Stack.Screen name='CafeList' component={CafeList}/>
+				<Stack.Screen name='CafeList' component={CafeList}
+					options={{
+						title : ''
+					}}
+				/>
+
+				{/* 카페 정보 - 메뉴판 */}
+				<Stack.Screen name="CafeMenu" component={CafeMenu}
+					options={{
+						title : ''
+					}}
+				/>
+
+				{/* 카페 정보 - 리뷰 쓰기*/}
+				<Stack.Screen name='CafeReviewWrite' component={CafeReviewWrite}
+					options={{
+						title : ''
+					}}
+				/>
+
+				{/* 카페 정보 - 리뷰 리스트 보기*/}
+				<Stack.Screen name='CafeReviewList' component={CafeReviewList}
+					options={{
+						title : ''
+					}}
+				/>
 			</Stack.Navigator>
 	);
 }
