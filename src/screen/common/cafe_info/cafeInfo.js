@@ -7,17 +7,17 @@ function CafeInfo({ navigation }) {
 			<Text>카페 정보글 화면이얌</Text>
 			<Button
 				title="메뉴판"
-				onPress={() => navigation.navigate('Home',{screen : 'CafeMenu'})}
+				onPress={() => navigation.navigate('CafeMenu')}
 			/>
 
 			<Button
 				title="리뷰쓰러가기"
-				onPress={() => navigation.navigate('Home',{screen : 'CafeReviewWrite'})}
+				onPress={() => navigation.navigate('CafeReviewWrite')}
 			/>
 
 			<Button
 				title="리뷰보러가기"
-				onPress={() => navigation.navigate('Home',{screen : 'CafeReviewList'})}
+				onPress={() => navigation.navigate('CafeReviewList')}
 			/>
 		</View>
 	);

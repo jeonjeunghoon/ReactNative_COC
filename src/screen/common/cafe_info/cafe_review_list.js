@@ -7,7 +7,7 @@ function CafeReviewWrite({ navigation }) {
 			<Text>카페 리뷰 리스트 보여주는 부분</Text>
 			<Button
 				title="리뷰쓰러가기"
-				onPress={() => navigation.navigate('Home',{screen : 'CafeReviewWrite'})}
+				onPress={() => navigation.navigate('CafeReviewWrite')}
 			/>
 		</View>
 	);

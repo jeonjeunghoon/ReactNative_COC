@@ -16,12 +16,11 @@ import MainPageIndex from './screen/main_page/main_page_index'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // screen/mypage/like에 있는 like를 가져옴
-import Jim from './screen/mypage/like'
+import LikeIndex from './screen/like/LikeIndex'
 // screen/mypage/mypage_main경로에 있는 mypage_main를 가져옴
-import MyPage from './screen/mypage/mypage_main'
-
-// screen/mypage/mypage_main경로에 있는 mypage_main를 가져옴
-import ServiceCenter from './screen/service_center/service_center'
+import MyPageIndex from './screen/mypage/MyPageIndex'
+// 고객센터
+import ServiceCenterIndex from './screen/service_center/ServiceCenterIndex'
 
 //Tab Navigator 사용하기 위해서 만듬 변수
 const Tab = createBottomTabNavigator();
@@ -45,7 +44,7 @@ function App() {
 						)
 					}}
 				/>
-				<Tab.Screen name="찜" component={Jim}
+				<Tab.Screen name="찜" component={LikeIndex}
 					options={{
 						tabBarLabel: ({ focused }) => (
 							<Text style={{ fontSize: 15, color: focused ? '#0B614B' : '#000000' , marginBottom:15 }}>
@@ -54,7 +53,7 @@ function App() {
 						)
 					}}
 				/>
-				<Tab.Screen name="마이페이지" component={MyPage}
+				<Tab.Screen name="마이페이지" component={MyPageIndex}
 					options={{
 						tabBarLabel: ({ focused }) => (
 							<Text style={{ fontSize: 15, color: focused ? '#0B614B' : '#000000' , marginBottom:15 }}>
@@ -63,7 +62,7 @@ function App() {
 						)
 					}}/>
 
-				<Tab.Screen name="고객센터" component={ServiceCenter}
+				<Tab.Screen name="고객센터" component={ServiceCenterIndex}
 					options={{
 						tabBarLabel: ({ focused }) => (
 							<Text style={{ fontSize: 15, color: focused ? '#0B614B' : '#000000' , marginBottom:15 }}>
