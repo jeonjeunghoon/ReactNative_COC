@@ -8,17 +8,19 @@ function Home({navigation}){
 			{/*주변지역 핫한 카페로 이동 */}
 			<Button
 				title="주변지역 핫한 카페 화면"
-				onPress={() => navigation.navigate('Home',{screen : 'CafeInfo'})}
+				onPress={() => { navigation.navigate('CafeInfo')}}
 			/>
 			{/*카페 검색 창으로 이동 */}
 			<Button
 				title="카페 검색"
-				onPress={() => navigation.navigate('Home',{screen : 'SearchCafe'})}
+				onPress={() => { navigation.navigate('SearchCafe',{
+					sample: "give sample"
+				})}}
 			/>
 			{/* 카페 테마로 검색하는 창으로 이동 */}
 			<Button
 				title="카페 테마로 검색"
-				onPress={() => navigation.navigate('Home',{screen : 'CafeTheme'})}
+				onPress={() => { navigation.navigate('CafeTheme')}}
 			/>
 	  	</View>
 	);

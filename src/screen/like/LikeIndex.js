@@ -1,32 +1,23 @@
-/////이부분은 메인화면에서 넘어갈 화면들의 경로를 입력하는곳이다.
+/////이부분은 찜하기 화면에서 넘어갈 화면들의 경로를 입력하는곳이다.
 
 //여기서 우리가 메인화면에서 넘길 화면은 
 // - 카페정보
-// - 카페검색창
-// - 카페 테마 검색창
-// - 카페 리스트 창
 // - 메뉴판
 // - 리뷰 작성화면
 // - 리뷰 리스트
 
-
-//그리고 메인 화면의 화면은 Stack.Screen에서 가장 처음으로 올려야지 
-//해당 Stack.Navigation에서 메인화면으로 지정이 된다. 그래서 main화면도 가져왔다.
+//메인 화면 지정을 위해 찜하기 화면 가저옴
 import * as React from 'react';
 import {Image,TouchableOpacity, Alert } from 'react-native';
 //Stack Navigator 사용을 위해서 import
 import { createStackNavigator } from '@react-navigation/stack';
 
-//main home 화면
-import MainHome from '../main_page/main_page'
-//핫한 카페 정보글 부분
-import CafeInfo from '../common/cafe_info/cafeInfo'
-//카페 검색창 부분
-import SearchCafe from './search/search_cafe'
-//테마를 통한 카페 검색창 부분
-import CafeTheme from './search/search_cafe_theme'
+//찜하기 메인 화면
+import LikeMain from './LikeMain'
 //카페 검색 - 카페 리스트
 import CafeList from '../common/cafe_list/cafe_list'
+//찜한 카페 정보글 부분
+import CafeInfo from '../common/cafe_info/cafeInfo'
 //카페정보 - 메뉴판
 import CafeMenu from '../common/cafe_info/cafe_menu'
 //카페정보 - 리뷰 쓰기
@@ -37,32 +28,14 @@ import CafeReviewList from '../common/cafe_info/cafe_review_list'
 //Stack Navigator를 사용하기 위해서  createStackNavigator해서 만듬
 const Stack = createStackNavigator();
 
-function MainNavigator() {
+function LikeIndex() {
 	return (
-			<Stack.Navigator initialRouteName="Home" screenOptions={{title :'COC', headerTitleAlign: 'center'}}>
+
+			<Stack.Navigator initialRouteName="LikeMain" screenOptions={{headerTitleAlign: 'center'}}>
 				{/* 메인화면 */}
-				<Stack.Screen name="MainHome" component={MainHome}
+				<Stack.Screen name="LikeMain" component={LikeMain}
 					options={{
-						title : 'COC'
-					}}
-				/>
-				{/* 핫한 카페 정보*/}
-				<Stack.Screen name="CafeInfo" component={CafeInfo}
-					options={{
-						title : '카페정보',
-						headerRight : shareIcon
-					}}
-				/>
-				{/*카페 검색창 부분*/}
-				<Stack.Screen name="SearchCafe" component={SearchCafe}
-					options={{
-						title : ''
-					}}
-				/>
-				{/* 카페 테마로 검색 */}
-				<Stack.Screen name='CafeTheme' component={CafeTheme}
-					options={{
-						title : ''
+						title : '찜하기'
 					}}
 				/>
 
@@ -70,6 +43,14 @@ function MainNavigator() {
 				<Stack.Screen name='CafeList' component={CafeList}
 					options={{
 						title : ''
+					}}
+				/>				
+
+				{/* 찜한 카페 정보*/}
+				<Stack.Screen name="CafeInfo" component={CafeInfo}
+					options={{
+						title : '카페정보',
+						headerRight : shareIcon
 					}}
 				/>
 
@@ -109,4 +90,4 @@ function shareIcon() {
 	);
   }
 
-export default MainNavigator;
+export default LikeIndex;
