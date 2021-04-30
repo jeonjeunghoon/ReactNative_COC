@@ -8,25 +8,28 @@ function MyPageMain({navigation}){
 	return(
 		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 			<Text style={styles.tabTitle}>마이페이지 화면</Text>
-			<Text>찜하기 카페 목록</Text>
 			<Button
 				title='업적 보러가기'
 				onPress={ () => {
 					navigation.navigate('Achievment');
 				}}
 			/>
+
 			<Button
 				title='내 리뷰 목록 보러가기'
 				onPress={ () => {
 					navigation.navigate('MyReviewList');
 				}}
-			/>		
+			/>
+
 			<Button
 				title='프로필 수정하기'
 				onPress={ () => {
 					navigation.navigate('UpdateProfile');
 				}}
-			/>	
+			/>
+			
+			<Text>찜한 카페 목록</Text>			
 			<View>
 				<CafeList navigation={navigation}/>
 			</View>
