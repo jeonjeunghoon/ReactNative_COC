@@ -14,9 +14,7 @@ function Home({navigation}){
 			{/* 카페 검색창 부분 */}
 			<View style={styles.searchContainer}>
 				<TouchableWithoutFeedback onPress={() => {
-					navigation.navigate('SearchCafe',{
-						sample: "give sample"
-					})
+					navigation.navigate('SearchCafe')
 				}}>
 					<View style={styles.flexRow}>
 						<View>
@@ -56,7 +54,7 @@ const styles = StyleSheet.create({
 	container : {
 		flex: 1,
 		backgroundColor : 'white',
-		padding: 20
+		padding: '6%'
 	},
 	// 검색창 컨테이너
 	searchContainer : {
@@ -82,13 +80,13 @@ const styles = StyleSheet.create({
 	hotContainer : {
 		flex : 1,
 		borderWidth: 3,
-		marginTop:2,
+		marginTop:'5%',
 	},
 	//테마별 감싸는 컨테이너
 	themeContainer : {
 		flex : 1,
 		borderWidth: 3,
-		marginTop:2
+		marginTop:'5%'
 	},
 });
 export default Home;
