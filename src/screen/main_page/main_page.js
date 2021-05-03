@@ -74,6 +74,10 @@ const styles = StyleSheet.create({
 	searchIcon:{
 		marginRight:'2%'
 	},
+	flexRow:{
+		flexDirection:'row',
+		justifyContent:'space-between'
+	},
 	//핫한 카페 감싸는 컨테이너
 	hotContainer : {
 		flex : 1,
@@ -86,10 +90,5 @@ const styles = StyleSheet.create({
 		borderWidth: 3,
 		marginTop:2
 	},
-	//공통으로 사용
-	flexRow:{
-		flexDirection:'row',
-		justifyContent:'space-between'
-	}
 });
 export default Home;
