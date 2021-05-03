@@ -1,28 +1,34 @@
 import * as React from 'react';
 import { Button, View, StyleSheet, Text} from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 //아이콘 사용을 위한 import
 import Icon from 'react-native-vector-icons/Ionicons';
+//반응형 폰트 크기를 위한 import
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
 function Home({navigation}){
 	return(
 		<View style={styles.container}>
+
 			{/* 카페 검색창 부분 */}
 			<View style={styles.searchContainer}>
-				{/*카페 검색 창으로 이동 */}
-				{/* <Button
-					title="카페 검색"
-					onPress={() => { navigation.navigate('SearchCafe',{
+				<TouchableWithoutFeedback onPress={() => {
+					navigation.navigate('SearchCafe',{
 						sample: "give sample"
-					})}}
-				/> */}
-				<View>
-					<Text style={styles.searchIntro}>어떤 카페로 갈까요?</Text>					
-				</View>
-				<View>
-					<Icon name='ios-search' size={20} color='#2E2E2E' style={styles.searchIcon}/>					
-				</View>
+					})
+				}}>
+					<View style={styles.flexRow}>
+						<View>
+							<Text style={styles.searchIntro}>어떤 카페로 갈까요?</Text>
+						</View>			
+						<View>	
+							<Icon name='ios-search' size={RFPercentage(3.5)} color='#2E2E2E' style={styles.searchIcon}/>						
+						</View>						
+					</View>	
+				</TouchableWithoutFeedback>				
 			</View>
+
 
 			{/* 핫한 카페 정보 부분*/}
 			<View style={styles.hotContainer}>
@@ -59,15 +65,14 @@ const styles = StyleSheet.create({
 		marginTop:2,
 		borderRadius : 18,
 		borderColor: '#2E2E2E',
-		flexDirection:'row',
-		alignItems:'center'
+		justifyContent:'center'
 	},
 	searchIntro:{
-		borderWidth: 1.7,
-		fontSize:16
+		fontSize: RFPercentage(2.5),
+		marginLeft:'42%'
 	},
 	searchIcon:{
-		borderWidth: 1.7,
+		marginRight:'2%'
 	},
 	//핫한 카페 감싸는 컨테이너
 	hotContainer : {
@@ -80,6 +85,11 @@ const styles = StyleSheet.create({
 		flex : 1,
 		borderWidth: 3,
 		marginTop:2
+	},
+	//공통으로 사용
+	flexRow:{
+		flexDirection:'row',
+		justifyContent:'space-between'
 	}
-})
+});
 export default Home;
