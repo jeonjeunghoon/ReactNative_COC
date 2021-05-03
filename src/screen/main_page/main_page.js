@@ -7,7 +7,7 @@ function Home({navigation}){
 			{/*이거는 Stack.screen에서 등록한 name인 CafeInfo로 navigate함 */}
 			{/*주변지역 핫한 카페로 이동 */}
 			<Button
-				title="주변지역 핫한 카페 화면"
+				title="주변지역 핫한 카페로 가기"
 				onPress={() => { navigation.navigate('CafeInfo')}}
 			/>
 			{/*카페 검색 창으로 이동 */}
