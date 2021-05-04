@@ -6,6 +6,8 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
 //반응형 폰트 크기를 위한 import
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+//이미지 슬라이더를 사용하기 위해
+import Carousel from 'react-native-snap-carousel';
 
 function Home({navigation}){
 	return(
@@ -27,14 +29,15 @@ function Home({navigation}){
 				</TouchableWithoutFeedback>				
 			</View>
 
-
 			{/* 핫한 카페 정보 부분*/}
 			<View style={styles.hotContainer}>
-				{/*주변지역 핫한 카페로 이동 */}
+				
+				{/* 요즘 핫한 카페로 이동 */}
 				<Button
-					title="주변지역 핫한 카페로 가기"
+					title="요즘 핫한 카페로 가기"
 					onPress={() => { navigation.navigate('CafeInfo')}}
 				/>
+
 			</View>
 			
 			{/* 카페 테마 검색 부분 */}
@@ -66,7 +69,7 @@ const styles = StyleSheet.create({
 		justifyContent:'center'
 	},
 	searchIntro:{
-		fontSize: RFPercentage(2.5),
+		fontSize: RFPercentage(2.5), //반응형 폰트크기 적용
 		marginLeft:'42%'
 	},
 	searchIcon:{

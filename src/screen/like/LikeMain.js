@@ -4,12 +4,14 @@ import {  View, Text, StyleSheet, Button } from 'react-native';
 import CafeList from '../common/cafe_list/cafe_list'
 
 
-function LikeMain({navigation}){
+function LikeMain({route,navigation}){
+
+	
 	return(
 		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 			<Text style={styles.tabTitle}>찜하기 화면</Text>
 			<View>
-				<CafeList navigation={navigation}/>
+				<CafeList navigation={navigation} route={route}/>
 			</View>
 	  	</View>
 	);
