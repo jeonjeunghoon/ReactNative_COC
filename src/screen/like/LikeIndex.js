@@ -37,6 +37,9 @@ function LikeIndex() {
 					options={{
 						title : '찜하기'
 					}}
+					initialParams={{
+						sample: "give sample"
+					}}
 				/>
 
 				{/* 카페 검색 - 카페 list */}
@@ -44,7 +47,7 @@ function LikeIndex() {
 					options={{
 						title : ''
 					}}
-				/>				
+				/>
 
 				{/* 찜한 카페 정보*/}
 				<Stack.Screen name="CafeInfo" component={CafeInfo}
