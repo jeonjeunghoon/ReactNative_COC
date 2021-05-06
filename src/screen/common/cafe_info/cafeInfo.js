@@ -2,9 +2,10 @@ import * as React from 'react';
 import { Button, View, Text,Image,TouchableOpacity } from 'react-native';
 
 function CafeInfo({ route,navigation }) {
-	//cafeList에서 전달받은 CafeInfo 객체를 route로 받음
+	//cafeList에서 전달받은 props를 route로 받음
 	const param = route.params;
 
+	//route에 있는것중 CafeInfo 객체를 cafeInfo 변수에 집어넣음
 	const cafeInfo = param.CafeInfo
 
 	navigation.setOptions({
