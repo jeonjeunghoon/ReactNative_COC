@@ -48,6 +48,9 @@ function MyPageindex() {
 					options={{
 						title : '마이페이지'
 					}}
+					initialParams={{
+						sample: "give sample"
+					}}
 				/>
 
 				{/* 카페 검색 - 카페 list */}
@@ -58,12 +61,7 @@ function MyPageindex() {
 				/>		
 
 				{/* 찜했거나 평가한 카페 정보*/}
-				<Stack.Screen name="CafeInfo" component={CafeInfo}
-					options={{
-						title : '카페정보',
-						headerRight : shareIcon
-					}}
-				/>
+				<Stack.Screen name="CafeInfo" component={CafeInfo}/>
 
 				{/* 카페 정보 - 메뉴판 */}
 				<Stack.Screen name="CafeMenu" component={CafeMenu}
@@ -109,17 +107,5 @@ function MyPageindex() {
 			</Stack.Navigator>
 	);
 }
-
-function shareIcon() {
-	//아래의 이미지를 반환한다.
-	return (
-		//TouchalbrOpacity를 사용하면 클릭효과인 onpress를 사용할수 있음
-		<TouchableOpacity onPress ={() => Alert.alert('공유버튼 클릭됨')}>
-			<Image
-				style={{ width: 23, height: 23, marginRight: 15 }}
-				source={require('../../assets/images/screens/cafeInfo/share.png')}/>
-		</TouchableOpacity>
-	);
-  }
 
 export default MyPageindex;

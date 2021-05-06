@@ -8,7 +8,6 @@
 
 //메인 화면 지정을 위해 찜하기 화면 가저옴
 import * as React from 'react';
-import {Image,TouchableOpacity, Alert } from 'react-native';
 //Stack Navigator 사용을 위해서 import
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -27,6 +26,7 @@ import CafeReviewList from '../common/cafe_info/cafe_review_list'
 
 //Stack Navigator를 사용하기 위해서  createStackNavigator해서 만듬
 const Stack = createStackNavigator();
+
 
 function LikeIndex() {
 	return (
@@ -50,12 +50,7 @@ function LikeIndex() {
 				/>
 
 				{/* 찜한 카페 정보*/}
-				<Stack.Screen name="CafeInfo" component={CafeInfo}
-					options={{
-						title : '카페정보',
-						headerRight : shareIcon
-					}}
-				/>
+				<Stack.Screen name="CafeInfo" component={CafeInfo}/>
 
 				{/* 카페 정보 - 메뉴판 */}
 				<Stack.Screen name="CafeMenu" component={CafeMenu}
@@ -80,17 +75,5 @@ function LikeIndex() {
 			</Stack.Navigator>
 	);
 }
-
-function shareIcon() {
-	//아래의 이미지를 반환한다.
-	return (
-		//TouchalbrOpacity를 사용하면 클릭효과인 onpress를 사용할수 있음
-		<TouchableOpacity onPress ={() => Alert.alert('공유버튼 클릭됨')}>
-			<Image
-				style={{ width: 23, height: 23, marginRight: 15 }}
-				source={require('../../assets/images/screens/cafeInfo/share.png')}/>
-		</TouchableOpacity>
-	);
-  }
 
 export default LikeIndex;
