@@ -9,7 +9,15 @@ import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 //이미지 슬라이더를 사용하기 위해
 import Carousel from 'react-native-snap-carousel';
 
+//카페정보 클래스 만든걸 import 해옴
+import CafeInfo from '../../Cafe/model/CafeInfo'
+
 function Home({navigation}){
+
+
+	//카페정보 클래스로 객체를 임시로 만듬
+	const wonju = new CafeInfo('사진정원', '원주시', 5,100,100,100,100);
+
 	return(
 		<View style={styles.container}>
 
@@ -35,7 +43,10 @@ function Home({navigation}){
 				{/* 요즘 핫한 카페로 이동 */}
 				<Button
 					title="요즘 핫한 카페로 가기"
-					onPress={() => { navigation.navigate('CafeInfo')}}
+					onPress={() => { navigation.navigate('CafeInfo',{
+						//위에서 만든 객체를 props로 전달
+						CafeInfo : wonju
+					})}}
 				/>
 
 			</View>

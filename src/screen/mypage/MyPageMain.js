@@ -4,7 +4,7 @@ import {  View, Text, StyleSheet,Button } from 'react-native';
 import CafeList from '../common/cafe_list/cafe_list'
 
 //마이페이지 부분
-function MyPageMain({navigation}){
+function MyPageMain({route,navigation}){
 	return(
 		<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 			<Text style={styles.tabTitle}>마이페이지 화면</Text>
@@ -31,7 +31,7 @@ function MyPageMain({navigation}){
 			
 			<Text>찜한 카페 목록</Text>			
 			<View>
-				<CafeList navigation={navigation}/>
+				<CafeList navigation={navigation} route={route}/>
 			</View>
 	  	</View>
 	);

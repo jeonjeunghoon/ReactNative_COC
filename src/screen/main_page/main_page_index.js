@@ -47,12 +47,8 @@ function MainNavigator() {
 					}}
 				/>
 				{/* 핫한 카페 정보*/}
-				<Stack.Screen name="CafeInfo" component={CafeInfo}
-					options={{
-						title : '카페정보',
-						headerRight : shareIcon
-					}}
-				/>
+				<Stack.Screen name="CafeInfo" component={CafeInfo}/>
+				
 				{/*카페 검색창 부분*/}
 				<Stack.Screen name="SearchCafe" component={SearchCafe}
 					options={{
