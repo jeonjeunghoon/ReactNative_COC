@@ -8,8 +8,9 @@ function CafeInfo({ route,navigation }) {
 	//route에 있는것중 CafeInfo 객체를 cafeInfo 변수에 집어넣음
 	const cafeInfo = param.CafeInfo
 
+	console.log(cafeInfo);
 	navigation.setOptions({
-		title : cafeInfo.name,
+		// title : cafeInfo.name,
 		headerRight : shareIcon
 	})
 

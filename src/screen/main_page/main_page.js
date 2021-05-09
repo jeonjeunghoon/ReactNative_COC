@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{useState} from 'react';
 import { Button, View, StyleSheet, Text} from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
