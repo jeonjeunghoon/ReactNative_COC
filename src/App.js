@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Text } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 
 //Navigator Container 사용을 위해서 만듬 아곤 Navigator를 담는 공간임
 import { NavigationContainer } from '@react-navigation/native';
-
 
 // SplashScreen -> 어플 로딩부분이얌
 import {useEffect} from 'react';
@@ -21,6 +20,7 @@ import LikeIndex from './screen/like/LikeIndex'
 import MyPageIndex from './screen/mypage/MyPageIndex'
 // 고객센터
 import ServiceCenterIndex from './screen/service_center/ServiceCenterIndex'
+import color from 'color';
 
 //Tab Navigator 사용하기 위해서 만듬 변수
 const Tab = createBottomTabNavigator();
@@ -38,8 +38,8 @@ function App() {
 				<Tab.Screen name="Home" component={MainPageIndex}
 					options={{
 						tabBarLabel: ({ focused }) => (
-							<Text style={{ fontSize: 15, color: focused ? '#0B614B' : '#000000' , marginBottom:15 }}>
-							Home
+							<Text style={styles.tabBarStyle(focused)}>
+								Home
 							</Text>
 						)
 					}}
@@ -47,8 +47,8 @@ function App() {
 				<Tab.Screen name="찜" component={LikeIndex}
 					options={{
 						tabBarLabel: ({ focused }) => (
-							<Text style={{ fontSize: 15, color: focused ? '#0B614B' : '#000000' , marginBottom:15 }}>
-							찜
+							<Text style={styles.tabBarStyle(focused)}>
+								찜
 							</Text>
 						)
 					}}
@@ -56,8 +56,8 @@ function App() {
 				<Tab.Screen name="마이페이지" component={MyPageIndex}
 					options={{
 						tabBarLabel: ({ focused }) => (
-							<Text style={{ fontSize: 15, color: focused ? '#0B614B' : '#000000' , marginBottom:15 }}>
-							마이페이지
+							<Text style={styles.tabBarStyle(focused)}>
+								마이페이지
 							</Text>
 						)
 					}}/>
@@ -65,8 +65,8 @@ function App() {
 				<Tab.Screen name="고객센터" component={ServiceCenterIndex}
 					options={{
 						tabBarLabel: ({ focused }) => (
-							<Text style={{ fontSize: 15, color: focused ? '#0B614B' : '#000000' , marginBottom:15 }}>
-							고객센터
+							<Text style={styles.tabBarStyle(focused)}>
+								고객센터
 							</Text>
 						)
 					}}
@@ -75,5 +75,13 @@ function App() {
 		</NavigationContainer>
 	);
 }
+
+const styles = StyleSheet.create({
+    tabBarStyle: (focused) => ({
+		fontSize: 15,
+		color: focused ? '#FF0000' : '#000000',
+		marginBottom: 15
+    })
+})
 
 export default App;
