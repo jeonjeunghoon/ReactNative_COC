@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Button, View, Text } from 'react-native';
 //카페정보 클래스 만든걸 import 해옴
 import CafeInfo from '../../../Cafe/model/CafeInfo'
