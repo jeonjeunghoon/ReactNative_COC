@@ -15,6 +15,8 @@ target 'ReactNative_COC' do
 
 
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'ReactNative_COCTests' do
     inherit! :complete
     # Pods for testing

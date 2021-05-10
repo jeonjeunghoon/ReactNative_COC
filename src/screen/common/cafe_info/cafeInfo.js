@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{useEffect} from 'react';
 import { Button, View, Text,Image,TouchableOpacity } from 'react-native';
 
 function CafeInfo({ route,navigation }) {
@@ -6,13 +6,23 @@ function CafeInfo({ route,navigation }) {
 	const param = route.params;
 
 	//route에 있는것중 CafeInfo 객체를 cafeInfo 변수에 집어넣음
-	const cafeInfo = param.CafeInfo
+	const cfi = param.cfi
 
-	console.log(cafeInfo);
-	navigation.setOptions({
-		// title : cafeInfo.name,
-		headerRight : shareIcon
+	console.log(cfi);
+	console.log('여기는 info 화면');
+	
+	useEffect(() =>{
+		console.log('과연 업데이트 될때 호출이 될까');
+		navigation.setOptions({
+			title : cfi.name,
+			headerRight : shareIcon
+		})
 	})
+
+	// navigation.setOptions({
+	// 	title : cfi.name,
+	// 	headerRight : shareIcon
+	// })
 
 	return (
 		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>

@@ -45,7 +45,7 @@ function Home({navigation}){
 					title="요즘 핫한 카페로 가기"
 					onPress={() => { navigation.navigate('CafeInfo',{
 						//위에서 만든 객체를 props로 전달
-						CafeInfo : wonju
+						cfi : wonju
 					})}}
 				/>
 
