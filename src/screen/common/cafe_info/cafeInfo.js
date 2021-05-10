@@ -11,13 +11,14 @@ function CafeInfo({ route,navigation }) {
 	console.log(cfi);
 	console.log('여기는 info 화면');
 	
+	//노션에다가 설명 해놨으니 확인 부탁
 	useEffect(() =>{
 		console.log('과연 업데이트 될때 호출이 될까');
 		navigation.setOptions({
 			title : cfi.name,
 			headerRight : shareIcon
 		})
-	})
+	},[cfi])
 
 	// navigation.setOptions({
 	// 	title : cfi.name,
