@@ -20,11 +20,7 @@ function CafeInfo({ route,navigation }) {
 		})
 	},[cfi])
 
-	// navigation.setOptions({
-	// 	title : cfi.name,
-	// 	headerRight : shareIcon
-	// })
-
+	
 	return (
 		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 			<Text>카페 정보글 화면이얌</Text>
