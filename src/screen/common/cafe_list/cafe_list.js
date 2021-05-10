@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Button, View, Text } from 'react-native';
 //카페정보 클래스 만든걸 import 해옴
 import CafeInfo from '../../../Cafe/model/CafeInfo'
@@ -11,7 +11,9 @@ function CafeList({ route,navigation }) {
 
 	//카페정보 클래스로 객체를 임시로 만듬
 	const wonju = new CafeInfo('사진정원', '원주시', 5,100,100,100,100);
-
+	console.log(wonju);
+	console.log('여기는 list 화면');
+	
 	return (
 		<View>
 			<Text>카페 리스트가 보여질 화면이얌</Text>
@@ -20,7 +22,7 @@ function CafeList({ route,navigation }) {
 				title="카페 정보 보러가기"
 				onPress={() => {navigation.navigate('CafeInfo',{
 					//위에서 만든 객체를 props로 전달
-					CafeInfo : wonju
+					cfi : wonju
 				})}}
 			/>
 		</View>
