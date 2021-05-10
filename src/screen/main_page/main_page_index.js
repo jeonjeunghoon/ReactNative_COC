@@ -39,7 +39,7 @@ const Stack = createStackNavigator();
 
 function MainNavigator() {
 	return (
-			<Stack.Navigator initialRouteName="Home" screenOptions={{title :'COC', headerTitleAlign: 'center'}}>
+			<Stack.Navigator initialRouteName="Home" screenOptions={{ headerTitleAlign: 'center'}}>
 				{/* 메인화면 */}
 				<Stack.Screen name="MainHome" component={MainHome}
 					options={{
