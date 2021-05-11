@@ -82,7 +82,7 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle" // add this line
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle" // add this line vector icon 추가를 위해
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -220,5 +220,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
-
+//vector 아이콘 추가를 위해
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
