@@ -13,7 +13,6 @@ function CafeInfo({ route,navigation }) {
 	
 	//노션에다가 설명 해놨으니 확인 부탁
 	useEffect(() =>{
-		console.log('과연 업데이트 될때 호출이 될까');
 		navigation.setOptions({
 			title : cfi.name,
 			headerRight : shareIcon
@@ -24,10 +23,10 @@ function CafeInfo({ route,navigation }) {
 	return (
 		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 			<Text>카페 정보글 화면이얌</Text>
-			<Button
+			{/* <Button
 				title="메뉴판"
 				onPress={() => navigation.navigate('CafeMenu')}
-			/>
+			/> */}
 
 			<Button
 				title="리뷰쓰러가기"
